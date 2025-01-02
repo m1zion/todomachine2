@@ -1,0 +1,8 @@
+.botonCrear{
+  width: 100%;
+  background-color:#674d3c !important;
+  display: none;
+}
+.botonCrear:hover{
+  background-color:#a2836e !important; 
+}

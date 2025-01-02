@@ -1,0 +1,9 @@
+.loading-box{
+    position: relative;
+    margin-bottom: 15px;
+}
+.loading-item-close{
+    position: absolute;
+    right: 1px;
+    top: -13px;
+}
