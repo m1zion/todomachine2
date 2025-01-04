@@ -1,6 +1,11 @@
 import { Box, TextField } from '@mui/material';
-import React, { useState } from 'react';
-function TodoSearch({searchValue,setSearchValue}){ //Componentes
+import React, { useContext } from 'react';
+import { TodoContext } from '../TodoContext';
+function TodoSearch(){ //Componentes
+    const { 
+      searchValue,
+      setSearchValue
+    }= useContext(TodoContext);
     return (
       <Box sx={{width:'100%',display:'flex', justifyContent:'center'}}>
         <TextField 

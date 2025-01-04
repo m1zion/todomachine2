@@ -19,7 +19,7 @@ function TodoProvider({ children }) { //Provider
     const [searchValue,setSearchValue] = useState('');
     const completedTodos = todos.filter(todo => !!todo.completed).length; //!! Asegurarnos que sean valores falsos o verdaderos
     const totalTodos = todos.length;
-    //console.log(todos);
+    const [openModal,setOpenModal] = useState(true);
     const filteredTodos = todos.filter(todo => 
         todo.text && todo.text.toLowerCase().includes(searchValue.toLowerCase())
     );
@@ -50,7 +50,9 @@ function TodoProvider({ children }) { //Provider
             setSearchValue,
             filteredTodos,
             eliminaTodo,
-            toggleTodoCompletion
+            toggleTodoCompletion,
+            openModal,
+            setOpenModal,
         }}> { /*Cualquier elemento que le enviemos tentra las propiedades del provider*/}
             {children} 
         </TodoContext.Provider>

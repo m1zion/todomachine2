@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { TodoCounter } from '../TodoCounter';
 import { TodoSearch } from '../TodoSearch/TodoSearch';
 import { TodoList } from '../TodoList';
@@ -11,7 +11,18 @@ import { TodosLoading } from '../TodosLoading';
 import { TodosError } from '../TodosError';
 import { TodosEmpty } from '../TodosEmpty';
 import { TodoContext } from '../TodoContext';
+import { Modal } from '../Modal';
 function AppUI () {
+  const {
+    loading,
+    error,
+    filteredTodos,
+    eliminaTodo,
+    toggleTodoCompletion,
+    openModal,
+    setOpenModal
+  } = useContext(TodoContext);
+
     const theme = useTheme();
     const isMdDown = useMediaQuery(theme.breakpoints.down('md')); // `true` for `md` and smaller screens
     return (
@@ -23,14 +34,7 @@ function AppUI () {
             <TodoCounter/>
             <TodoSearch/>
             {/* EL consumer tiene que recibir una funcion */}
-            <TodoContext.Consumer>
-              {({
-                  loading,
-                  error,
-                  filteredTodos,
-                  eliminaTodo,
-                  toggleTodoCompletion
-              }) =>(
+         
                 <TodoList>
                   {loading && <Box><TodosLoading/><TodosLoading/><TodosLoading/></Box>}
                   {error && <TodosError/>}
@@ -47,10 +51,8 @@ function AppUI () {
                       toggleTodoCompletion={() => toggleTodoCompletion(todo.id)}
                     />
                   ))}
-                </TodoList>
-              )}         
-            </TodoContext.Consumer>
-            {isMdDown && <CreateTodoButton />}
+                </TodoList>                  
+            {isMdDown && <><CreateTodoButton/>{openModal && (<Modal>Funcionalidad para agregar todos</Modal>)}</>}
           </Box>      
         </Box>
     );

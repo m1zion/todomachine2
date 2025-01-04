@@ -4,13 +4,14 @@ function useLocalStorage(itemName,initialValue) {  //Aqui agregamos al state y a
     //Vemos si hay "todos" en el localstorage, si no le asignamos un valor vacio y hacemos el setItem con []
     const [item,setItem] = useState(initialValue);
     const [loading,setLoading] = useState(true);
-    const [error,setError] = useState(false);   
+    const [error,setError] = useState(false); 
     useEffect(() =>
       {
         setTimeout(() => {
           try{
             const localStorageItem = localStorage.getItem(itemName);
             let parsedItem = (localStorageItem && JSON.parse(localStorageItem).length > 0) ? JSON.parse(localStorageItem) : initialValue;
+            setItem(parsedItem);  //Guardamos en el state (revisar si esta en el codigo original del curso)
             localStorage.setItem(itemName,JSON.stringify(parsedItem));  //localStorage.removeItem('todos_v1');
             setLoading(false);
           }

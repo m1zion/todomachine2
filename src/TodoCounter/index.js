@@ -1,9 +1,13 @@
 import { Typography } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
 import './TodoCounter.css'; 
-function TodoCounter({total,completed}){ //Componentes
+import { TodoContext } from '../TodoContext';
+function TodoCounter(){ //Componentes
+    const { 
+      completedTodos,
+      totalTodos}= useContext(TodoContext);
     return (
-      <Typography variant='h6' className='counterTitle'>Has completado {completed} de {total} tareas.</Typography>
+      <Typography variant='h6' className='counterTitle'>Has completado {completedTodos} de {totalTodos} tareas.</Typography>
     );
 }
 export {TodoCounter};
