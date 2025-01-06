@@ -8,8 +8,8 @@ function TodoProvider({ children }) { //Provider
     const defaultTodos = [
         {id: 0, text: 'Cortar cebolla', completed: true},
         {id: 1, text: 'Tomar el curso de react', completed: false},
-        {id: 2,text: 'Cenar', completed: false},
-        {id: 3,text: 'Hacer ejercicio', completed: true}
+        {id: 2, text: 'Cenar', completed: false},
+        {id: 3, text: 'Hacer ejercicio', completed: true}
       ];
     const {
         item: todos,
@@ -19,7 +19,7 @@ function TodoProvider({ children }) { //Provider
     const [searchValue,setSearchValue] = useState('');
     const completedTodos = todos.filter(todo => !!todo.completed).length; //!! Asegurarnos que sean valores falsos o verdaderos
     const totalTodos = todos.length;
-    const [openModal,setOpenModal] = useState(true);
+    const [openModal,setOpenModal] = useState(false);
     const filteredTodos = todos.filter(todo => 
         todo.text && todo.text.toLowerCase().includes(searchValue.toLowerCase())
     );
@@ -31,7 +31,17 @@ function TodoProvider({ children }) { //Provider
         );
         newTodos.splice(todoIndex,1); //SPLICE corta el arreglo a partir de una posicion
         saveTodos(newTodos); //Esto es el saveItem de mi hook, le envia el array completamente nuevo
-      }
+    }
+    const addTodo = (text) => {
+        const newTodos = [...todos];
+        const id = todos.length > 0 ? todos[todos.length - 1].id + 1 : 1; // Incremental ID based on the last item's ID
+        newTodos.push({
+            id,
+            text,
+            completed: false,
+        });
+        saveTodos(newTodos);
+    };
     function toggleTodoCompletion(id) {
         const newTodos = [...todos];
         const todoIndex = newTodos.findIndex(
@@ -53,6 +63,7 @@ function TodoProvider({ children }) { //Provider
             toggleTodoCompletion,
             openModal,
             setOpenModal,
+            addTodo,
         }}> { /*Cualquier elemento que le enviemos tentra las propiedades del provider*/}
             {children} 
         </TodoContext.Provider>

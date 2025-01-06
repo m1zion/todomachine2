@@ -1,9 +1,18 @@
 import { Button } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
 import './CreateTodoButton.css';
+import { TodoContext } from '../TodoContext';
 function CreateTodoButton(){ //Componentes
+    const { 
+      openModal,
+      setOpenModal 
+    } = useContext(TodoContext);
+    const handlePopup = (event) => {
+      event.preventDefault();
+      setOpenModal((prev) => !prev);
+    }   
     return (
-      <Button variant="contained" className="botonCrear" onClick={(event) => {console.log(event)}}>Crear</Button>
+      <Button onClick={handlePopup} variant="contained" className="botonCrear">Crear</Button>
     );
 }
 export {CreateTodoButton};
