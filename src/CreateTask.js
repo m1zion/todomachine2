@@ -1,4 +1,4 @@
-import { Button, TextField, Typography } from '@mui/material';
+import { Box, Button, TextField, Typography } from '@mui/material';
 import React, { useState, useContext } from 'react';
 import { CreateTodoButton } from './CreateTodoButton';
 import { TodoContext } from './TodoContext/index.js';
@@ -16,9 +16,11 @@ function CreateTask(){ //Componentes
     }
     return (
       <>
-        <Typography variant='h6' className='counterTitle2'>Escribe un nuevo ToDo.</Typography>
+        <Box className='counterTitle2'>
+          <Typography variant='h5' >Escribe un nuevo</Typography><Typography variant='h5' className='textDark'> ToDo.</Typography>
+        </Box>       
         <TextField  
-          sx={{width:'100%',backgroundColor:'white'}} 
+          sx={{width:'95%',backgroundColor:'white'}} 
           size="small" 
           id="outlined-basic" 
           variant="outlined"

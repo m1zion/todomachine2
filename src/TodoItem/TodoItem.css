@@ -6,7 +6,7 @@
   position: relative;
   justify-content: flex-start;
   gap:1rem;
-  background-color: rgba(162, 131, 110, 0.3) !important;
+  background-color: #dae7e3 !important;
   text-decoration: line-through;
 }
 .paperTasksItem{

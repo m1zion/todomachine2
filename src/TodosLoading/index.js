@@ -5,7 +5,7 @@ function TodosLoading(){
     return (
       <Box className='loading-box'>
         <Skeleton variant="circular" width={27} height={27} className='loading-item-close' />
-        <Skeleton variant="rounded" width={400} height={64} />        
+        <Skeleton variant="rounded" width="100%" height={64} />        
       </Box>
     );
 }

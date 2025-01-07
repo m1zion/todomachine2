@@ -1,12 +1,15 @@
-/*usaremos estos colores
-HEX: #fbefcc
-HEX: #f9ccac
-HEX: #f4a688
-HEX: #e0876a
-HEX: #fff2df
-HEX: #d9ad7c
-HEX: #a2836e
-HEX: #674d3c*/
+/*
+#edfffa
+#c7f2e5
+#90f6d7
+#35bcbf  
+#41506b 
+#263849
+
+#dae7e3
+
+https://www.shecodes.io/palettes/1281#palette
+*/
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -19,32 +22,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .mainContainer{
-    background: linear-gradient(135deg, #fbefcc, #e0876a);
-    min-height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: space-around;
+  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1024"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="%2390f6d7"/><stop offset="100%" stop-color="%2335bcbf"/></linearGradient></defs><rect width="1440" height="1024" fill="%23c7f2e5"/><path fill="url(%23grad)" d="M0 0c200 300 600 100 800 400s600-200 800 200v424H0z"/></svg>') no-repeat center/cover;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: space-around;
+
 }
 .task-list{
   height: fit-content;
-  width: 400px;
   margin-top: 3rem;
   margin-bottom: 2rem;
-  padding: 0 .5rem 1rem .5rem;
-  background-color: rgba(255, 255, 255, 0.6); /* White background with 80% opacity */
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  background-color: rgba(237, 255, 250, 0.6);
   border-radius: 8px; /* Rounded corners, optional */
   color: #333; /* Text color */
   font-family: Arial, sans-serif;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .newTaskContainer{
   margin-top: 3rem;
   margin-bottom: 2rem;
-  padding: 0 .5rem 1rem .5rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
   width: 400px;
-  background-color: rgba(255, 255, 255, 0.6); /* White background with 80% opacity */
+  background-color: rgba(237, 255, 250, 0.6);
   border-radius: 8px; /* Rounded corners, optional */
   color: #333; /* Text color */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
@@ -54,8 +63,17 @@ code {
   gap: 1rem;
   padding-top: 1rem;
 }
+.textDark{
+  font-weight: 600 !important;
+  color:#41506b 
+}
 @media (max-width: 900px) {
   .newTaskContainer {
     display: none;
   } 
+}
+@media (max-width: 600px) {
+  .task-list{
+    width: 90%;
+  }
 }

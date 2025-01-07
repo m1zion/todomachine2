@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import React, { useContext } from 'react';
 import './TodoCounter.css'; 
 import { TodoContext } from '../TodoContext';
@@ -7,7 +7,13 @@ function TodoCounter(){ //Componentes
       completedTodos,
       totalTodos}= useContext(TodoContext);
     return (
-      <Typography variant='h6' className='counterTitle'>Has completado {completedTodos} de {totalTodos} tareas.</Typography>
+      <Box className='counterTitle'>
+        <Typography variant='h5' >Has completado</Typography>
+        <Typography variant='h5'className='textDark'>{completedTodos}</Typography>
+        <Typography variant='h5'>de</Typography>
+        <Typography variant='h5'className='textDark'>{totalTodos}</Typography>
+        <Typography variant='h5'>toDo's.</Typography>
+      </Box>
     );
 }
 export {TodoCounter};

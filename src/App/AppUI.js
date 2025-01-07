@@ -58,7 +58,6 @@ function AppUI () {
           {openModal && (
             <Modal>
               <TodoForm/>
-                {/**/}
             </Modal>
           )}
         </Box>      
