@@ -26,8 +26,13 @@
   position: absolute;
   top: -11px;
   right: 1px;
-  background-color: rgba(251, 239, 204, 0.6);
+  background-color: #edfffa;
   border-radius:10px;
-  color:#674d3c;
+  color:#41506b ;
   cursor: pointer;
 }
+
+.closeIcon:hover{
+  background-color: #c7f2e5;
+}
+

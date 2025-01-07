@@ -25,27 +25,29 @@ function TodoForm () {
             <Box className='popup-inner'>
                 <IconButton onClick={handlePopup} className='close-btn'><CloseIcon/></IconButton>
                 <Box className="tableHeaderPopup">
-                    <Typography className="popupTitle" variant='h6'>Nueva Tarea</Typography>
+                    <Box className='todoFormTitle'>
+                        <Typography className="popupTitle" variant='h6'>Nuevo Todo</Typography>
+                    </Box>                    
                     <Stack className="formContainer" spacing={2} direction = {{xs:"column", md:"column", lg:"row"}} >
-                    <Box
-                    className="formContainerForm"
-                    component="form"
-                    autoComplete="off"
-                    noValidate
-                    >
-                        <Stack alignItems="center" spacing={2}>
-                        <TextField className="InputBasic"
-                            required
-                            id="tarea" 
-                            label="Tarea" 
-                            size="small"
-                            name="tarea"
-                            autoComplete='on'
-                            value={task}
-                            onChange={onChange}
-                        ></TextField>                    
-                        </Stack>
-                    </Box> 
+                        <Box
+                        className="formContainerForm"
+                        component="form"
+                        autoComplete="off"
+                        noValidate
+                        >
+                            <Stack alignItems="center" spacing={2}>
+                                <TextField className="InputBasic"
+                                    required
+                                    id="tarea" 
+                                    label="Tarea" 
+                                    size="small"
+                                    name="tarea"
+                                    autoComplete='on'
+                                    value={task}
+                                    onChange={onChange}
+                                ></TextField>                    
+                            </Stack>
+                        </Box> 
                     </Stack>
                     <Box className="popupButton">
                         <Button  onClick={handleSubmit}  variant="contained"  sx={{textTransform: 'none'}} className="botonCrear" >GUARDAR</Button>

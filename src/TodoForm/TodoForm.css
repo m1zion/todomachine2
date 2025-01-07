@@ -12,27 +12,39 @@
 }
 .popup-inner {
     position: relative;
-    padding: 32px;
+    display: flex;
     width: 100%;
     max-width: 540px;
     background-color: white;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color:#fff1e7 !important;
+    background-color:#edfffa !important;
 }
 .popup-inner .close-btn {
     position: absolute;
     top: 8px;
     right: 16px;
     margin-bottom: 10px;
-    color:var(--admin5);
 }
+
+.close-btn{
+    background-color: #c7f2e5 !important;
+    border-radius:10px;
+    color:#41506b ;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover{
+    background-color: #dae7e3 !important;
+  }
+
+  
+
 .tableHeaderPopup{
     display:flex;
     flex-wrap: wrap;
-    justify-Content:space-between;
+    align-items: center;
     margin-bottom: 1rem;
     margin-top: 1rem;
-    color: var(--gray900);
     padding: 5px;
     border-radius: 5px;
     width: 100%;
@@ -59,19 +71,32 @@
 }
 .formContainerForm {
     width: 100%;
-    max-width: 460px;
 }
 .InputBasic {
     width : 90%;
-    background:#fffaf6 !important;
+    background:white !important;
 }
 .popupButton{
     display: flex;
     flex-direction:row;
     align-items: center;
-    justify-content: space-between;
-    margin-top:30px !important;
+    justify-content: center;
+    margin-top:20px !important;
     gap: 10px;
     margin-bottom: 1rem;
     width: 100%;
 }
+
+.todoFormTitle{
+    text-align: center; 
+    margin-bottom: 10px !important;
+    border-radius: 5px;
+    padding:25px;
+    background-color: #35bcbf ;
+    color: white;
+    width: -webkit-fill-available;
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+  }
+  
