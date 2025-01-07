@@ -13,6 +13,10 @@ function TodoForm () {
         setTask(event.target.value);
     }
     const handleSubmit = (event) => {
+        if (!task || task.length <= 3 || !/^[a-zA-Z0-9\s]+$/.test(task)) {
+            alert("Favor de escribir un toDo valido mayor a 3 caracteres.");
+            return;
+        }
         addTodo(task);
         setOpenModal(false);
     }

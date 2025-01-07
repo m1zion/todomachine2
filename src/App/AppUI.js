@@ -4,7 +4,7 @@ import { TodoSearch } from '../TodoSearch/TodoSearch';
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { CreateTodoButton } from '../CreateTodoButton/';
-import { CreateTask } from '../CreateTask';
+import { TodoCreateTask } from '../TodoCreateTask';
 import { useTheme  } from '@mui/material/styles';
 import { Box,useMediaQuery } from '@mui/material';
 import { TodosLoading } from '../TodosLoading';
@@ -13,6 +13,7 @@ import { TodosEmpty } from '../TodosEmpty';
 import { TodoContext } from '../TodoContext';
 import { Modal } from '../Modal';
 import { TodoForm } from '../TodoForm';
+import { BorrarLista } from '../BorrarLista';
 import '../CreateTodoButton/CreateTodoButton.css';
 function AppUI () {
   const {
@@ -30,7 +31,7 @@ function AppUI () {
   return (
       <Box className='mainContainer'>
         <Box className='newTaskContainer'>
-          <CreateTask/>
+          <TodoCreateTask/>
         </Box>
         <Box className='task-list'>
           <TodoCounter/>
@@ -55,6 +56,7 @@ function AppUI () {
                 ))}
               </TodoList>                  
           {isMdDown && <><CreateTodoButton/></>}
+          <BorrarLista/>
           {openModal && (
             <Modal>
               <TodoForm/>

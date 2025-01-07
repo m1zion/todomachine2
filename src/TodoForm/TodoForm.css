@@ -11,6 +11,7 @@
     align-items: center;
 }
 .popup-inner {
+    margin: 0 .5rem;
     position: relative;
     display: flex;
     width: 100%;

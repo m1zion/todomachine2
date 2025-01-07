@@ -5,12 +5,13 @@ import { useLocalStorage}  from './useLocalStorage';
 Se importara como TodoProvider y recibira un children, el cual consumira todas estas variables y funciones
 Cuando lo importamos en nuestros componente lo llamaremos mediante el provider.consumer*/
 function TodoProvider({ children }) { //Provider
-    const defaultTodos = [
+    const defaultTodos_ = [
         {id: 0, text: 'Cortar cebolla', completed: true},
         {id: 1, text: 'Tomar el curso de react', completed: false},
         {id: 2, text: 'Cenar', completed: false},
         {id: 3, text: 'Hacer ejercicio', completed: true}
       ];
+    const defaultTodos = [];
     const {
         item: todos,
         saveItem: saveTodos,
@@ -31,6 +32,9 @@ function TodoProvider({ children }) { //Provider
         );
         newTodos.splice(todoIndex,1); //SPLICE corta el arreglo a partir de una posicion
         saveTodos(newTodos); //Esto es el saveItem de mi hook, le envia el array completamente nuevo
+    }
+    const eliminaTodoAll = () =>{
+        saveTodos([]); //Esto es el saveItem de mi hook, le envia el array completamente nuevo
     }
     const addTodo = (text) => {
         const newTodos = [...todos];
@@ -60,6 +64,7 @@ function TodoProvider({ children }) { //Provider
             setSearchValue,
             filteredTodos,
             eliminaTodo,
+            eliminaTodoAll,
             toggleTodoCompletion,
             openModal,
             setOpenModal,

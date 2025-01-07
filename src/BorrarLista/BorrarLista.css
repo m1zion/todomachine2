@@ -1,0 +1,25 @@
+.botonBorrarContainer{
+  width: 95%;
+  display: flex;
+  justify-content: end;
+}
+.botonBorrar{
+  margin-top: 1rem !important;
+  width: 50%;
+  height: 2.5rem;
+  display: flex;
+  justify-content: end !important;
+  gap:.5rem;
+  background-color: #edfffa !important;
+  border-color: #41506b !important;
+  color: #41506b !important;
+}
+.botonBorrar:hover{
+  background-color:#dae7e3 !important; 
+}
+@media (max-width: 600px) {
+  .botonBorrar{
+    width: 100%;
+    justify-content: center !important;
+  }
+}

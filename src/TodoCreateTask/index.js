@@ -1,9 +1,8 @@
 import { Box, Button, TextField, Typography } from '@mui/material';
 import React, { useState, useContext } from 'react';
-import { CreateTodoButton } from './CreateTodoButton';
-import { TodoContext } from './TodoContext/index.js';
-import imagen from './assets/images/95214.png';
-function CreateTask(){ //Componentes
+import { TodoContext } from '../TodoContext/index.js';
+import imagen from '../assets/images/95214.png';
+function TodoCreateTask(){ //Componentes
     const { 
       addTodo 
     } = useContext(TodoContext);
@@ -12,7 +11,12 @@ function CreateTask(){ //Componentes
         setTask(event.target.value);
     }
     const handleSubmit = (event) => {
+      if (!task || task.length <= 3 || !/^[a-zA-Z0-9\s]+$/.test(task)) {
+        alert("Favor de escribir un toDo valido mayor a 3 caracteres.");
+        return;
+      }
       addTodo(task);
+      setTask('');
     }
     return (
       <>
@@ -36,4 +40,4 @@ function CreateTask(){ //Componentes
       </>
     );
 }
-export {CreateTask};
+export {TodoCreateTask};
